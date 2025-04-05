@@ -1,3 +1,4 @@
+# === main.py ===
 import streamlit as st
 from utils.quiz_utils import init_db
 
@@ -10,3 +11,5 @@ st.markdown("AI-powered Study Assistant to help you learn better!")
 
 st.sidebar.success("Select a page from the left 👈")
 
+# Optional: Include overall stats or welcome message
+st.info("👋 Welcome to your personalized AI-powered learning dashboard!")
