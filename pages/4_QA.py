@@ -1,9 +1,12 @@
 import streamlit as st
 from utils.qa_utils import ask_question
+from utils.quiz_utils import log_user_prompt
 
-st.title("❓ Q&A Assistant")
-context = st.text_area("Paste your study notes:")
-question = st.text_input("Ask a question:")
-if st.button("Get Answer"):
-    answer = ask_question(context, question)
-    st.write(f"🧠 Answer: {answer}")
+st.title("🤖 AI Q&A")
+
+question = st.text_input("Ask a question")
+
+if st.button("Get Answer") and question:
+    answer = ask_question(question)
+    st.success(answer)
+    log_user_prompt("edrin", "Q&A", question)
