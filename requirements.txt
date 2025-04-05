@@ -1,0 +1,9 @@
+streamlit
+pytesseract
+Pillow
+google-generativeai
+sumy
+transformers
+torch
+sqlite3
+
