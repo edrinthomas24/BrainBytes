@@ -1,4 +1,3 @@
-from .gpt4 import get_gpt4_response
 from .gemini import get_gemini_response
 from .llama import get_llama_response
 from .deepseek import get_deepseek_response
@@ -9,11 +8,6 @@ from .compare import compare_embeddings
 def smart_ai(prompt):
     results = {}
     prompt_emb = get_embedding(prompt)
-
-    try:
-        gpt_resp = get_gpt4_response(prompt)
-        results['GPT-4'] = (gpt_resp, compare_embeddings(prompt_emb, get_embedding(gpt_resp)))
-    except: results['GPT-4'] = ("Error", 0)
 
     try:
         gemini_resp = get_gemini_response(prompt)
