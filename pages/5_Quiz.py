@@ -1,13 +1,15 @@
+# === main.py ===
 import streamlit as st
-from utils.quiz_utils import save_quiz_to_db
+from utils.quiz_utils import init_db
 
-st.title("🧠 Quiz Generator")
+# Initialize DB on first run
+init_db()
 
-topic = st.text_input("Topic")
-question = st.text_input("Question")
-options = st.text_area("Options (comma separated)")
-answer = st.text_input("Correct Answer")
+st.set_page_config(page_title="Smart StudyMate", layout="centered")
+st.title("📚 Smart StudyMate")
+st.markdown("AI-powered Study Assistant to help you learn better!")
 
-if st.button("Save Quiz"):
-    save_quiz_to_db(topic, question, options.split(','), answer)
-    st.success("Quiz saved!")
+st.sidebar.success("Select a page from the left 👈")
+
+# Optional: Include overall stats or welcome message
+st.info("👋 Welcome to your personalized AI-powered learning dashboard!")
